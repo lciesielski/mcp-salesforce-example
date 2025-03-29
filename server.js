@@ -28,7 +28,7 @@ fs.readdirSync(path.join(__dirname, "salesforce", "classes")).forEach(file => {
 			async (uri) => ({
 				contents: [{
 					uri: uri.href,
-					text: ${fs.readFileSync(filePath)}
+					text: `${fs.readFileSync(filePath)}`
 				}]
 			})
 		);
