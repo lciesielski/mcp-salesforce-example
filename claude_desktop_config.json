@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "salesforce": {
+      "command": "node",
+      "args": ["\your\path'to\server.js"],
+      "env": {
+        "SF_LOGIN_URL": "https://test.salesforce.com",
+        "SF_USERNAME": "username",
+        "SF_CLIENT": "client_id",
+        "SF_KEY": "private_key"
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 export function encrypt(inputData, key) {
-	if (typeof inputData === 'string') {
-		inputData = Buffer.from(inputData, 'utf-8');
+	if (typeof inputData === "string") {
+		inputData = Buffer.from(inputData, "utf-8");
 	}
-	if (typeof key === 'string') {
-		key = Buffer.from(key, 'utf-8');
+	if (typeof key === "string") {
+		key = Buffer.from(key, "utf-8");
 	}
 	
 	const encrypted = Buffer.alloc(inputData.length);
@@ -16,7 +16,7 @@ export function encrypt(inputData, key) {
 }
 
 export function base64Decode(base64Data, key) {
-	const encryptedData = Buffer.from(base64Data, 'base64');
+	const encryptedData = Buffer.from(base64Data, "base64");
 	const decryptedData = encrypt(encryptedData, key);
-	return decryptedData.toString('utf-8');
+	return decryptedData.toString("utf-8");
 }

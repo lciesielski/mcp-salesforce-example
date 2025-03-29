@@ -1,8 +1,8 @@
-import dotenv from 'dotenv';
-import axios from 'axios';
-import jwt from 'jsonwebtoken';
-import path from 'path';
-import { getSalesforceCredentials } from '../utils/credentials.js';
+import dotenv from "dotenv";
+import axios from "axios";
+import jwt from "jsonwebtoken";
+import path from "path";
+import { getSalesforceCredentials } from "../utils/credentials.js";
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ export async function loginToSalesforce() {
 		const { loginUrl, username, clientId, privateKey } = getSalesforceCredentials();
 
 		if (!loginUrl || !username || !clientId || !privateKey) {
-			throw new Error('Missing required environment variables for Salesforce login');
+			throw new Error("Missing required environment variables for Salesforce login");
 		}
 
 		const jwtPayload = {
@@ -25,16 +25,16 @@ export async function loginToSalesforce() {
 		};
 
 		const assertion = jwt.sign(jwtPayload, privateKey, {
-			algorithm: 'RS256'
+			algorithm: "RS256"
 		});
 
 		const params = new URLSearchParams();
-		params.append('grant_type', 'urn:ietf:params:oauth:grant-type:jwt-bearer');
-		params.append('assertion', assertion);
+		params.append("grant_type", "urn:ietf:params:oauth:grant-type:jwt-bearer");
+		params.append("assertion", assertion);
 
 		const response = await axios.post(`${loginUrl}/services/oauth2/token`, params, {
 			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
+				"Content-Type": "application/x-www-form-urlencoded"
 			}
 		});
 
@@ -46,9 +46,9 @@ export async function loginToSalesforce() {
 			instanceUrl
 		};
 	} catch (error) {
-		console.error('Error logging into Salesforce:', error.message);
+		console.error("Error logging into Salesforce:", error.message);
 		if (error.response) {
-			console.error('Response data:', error.response.data);
+			console.error("Response data:", error.response.data);
 		}
 		throw error;
 	}
@@ -67,7 +67,7 @@ export async function validateSession() {
 		});
 		return true;
 	} catch (error) {
-		console.log('Session is invalid or expired');
+		console.log("Session is invalid or expired");
 		return false;
 	}
 }

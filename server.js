@@ -2,12 +2,12 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-import { sendEmail } from './salesforce/mails.js';
-import { deployAccountRESTService } from './salesforce/deploy.js';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath, pathToFileURL } from 'url';
-import { dirname } from 'path';
+import { sendEmail } from "./salesforce/mails.js";
+import { deployAccountRESTService } from "./salesforce/deploy.js";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath, pathToFileURL } from "url";
+import { dirname } from "path";
 
 const server = new McpServer({
 	name: "Salesforce",
@@ -17,9 +17,9 @@ const server = new McpServer({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-fs.readdirSync(path.join(__dirname, 'salesforce', 'classes')).forEach(file => {
-	if (file.endsWith('.cls')) {
-		const filePath = path.join(__dirname, 'salesforce', 'classes', file);
+fs.readdirSync(path.join(__dirname, "salesforce", "classes")).forEach(file => {
+	if (file.endsWith(".cls")) {
+		const filePath = path.join(__dirname, "salesforce", "classes", file);
 		const fileUri = pathToFileURL(filePath);
 
 		server.resource(
@@ -82,7 +82,7 @@ server.tool(
 				content: [
 					{ 
 						type: "text", 
-						text: `Email successfully sent to ${emailDetails.toAddresses.join(', ')},.
+						text: `Email successfully sent to ${emailDetails.toAddresses.join(", ")},.
 							Subject: ${emailDetails.subject}
 							${result[0].isSuccess ? "Status: Success" : "Status: Fail"}`
 					}
