@@ -1,0 +1,17 @@
+{
+  "name": "mcp-salesforce",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "FormData": "^0.10.1",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
