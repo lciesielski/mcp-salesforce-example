@@ -63,4 +63,6 @@ node server.js
 
 ## Demo
 
-Check out the [video preview of this integration in action](https://www.youtube.com/watch?v=T883nXqatZ4).
+https://github.com/user-attachments/assets/08c8015a-bc57-4c5e-9f3d-4a9d9d310f4c
+
+[Video in higher quality](https://www.youtube.com/watch?v=T883nXqatZ4).
