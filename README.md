@@ -51,7 +51,18 @@ This project provides a basic example of integrating with Salesforce using the M
     }
     ```
 
+3.  **Configuration File:**
+    *   The repository includes a sample `claude_desktop_config.json` file that can be used as a template for configuring your MCP server.
+    *   Update the paths and credentials in this file according to your environment setup.
+
 ## Running the Server
 
 ```bash
 node server.js
+```
+
+## Demo
+
+Check out the video preview of this integration in action:
+
+[![Salesforce MCP Integration Demo](https://img.youtube.com/vi/T883nXqatZ4/0.jpg)](https://www.youtube.com/watch?v=T883nXqatZ4)
