@@ -63,6 +63,4 @@ node server.js
 
 ## Demo
 
-Check out the video preview of this integration in action:
-
-[![Salesforce MCP Integration Demo](https://img.youtube.com/vi/T883nXqatZ4/0.jpg)](https://www.youtube.com/watch?v=T883nXqatZ4)
+Check out the [video preview of this integration in action](https://www.youtube.com/watch?v=T883nXqatZ4).
