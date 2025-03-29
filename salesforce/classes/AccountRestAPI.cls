@@ -6,16 +6,13 @@ global with sharing class AccountRestAPI {
 		RestResponse res = RestContext.response;
 		
 		try {
-			Account acc = [
+			List<Account> acc = [
 				SELECT Name, Owner.Name
 				FROM Account
 				WITH SECURITY_ENFORCED
 			];
 			
-			return new AccountResponse(true, 'Account retrieved successfully', acc);
-		} catch (QueryException e) {
-			res.statusCode = 404;
-			return new AccountResponse(false, 'Account not found', null);
+			return new AccountResponse(true, 'Account retrieved successfully', acc[0]);
 		} catch (Exception e) {
 			res.statusCode = 500;
 			return new AccountResponse(false, 'Error: ' + e.getMessage(), null);
