@@ -111,7 +111,7 @@ server.prompt(
 				type: "text",
 				text: `I need to send a test email through Salesforce. Please use the sendSalesforceEmail tool with the following details:
 
-					Send to: l.ciesielski0@gmail.com
+					Send to: your.email@example.com
 					Subject: Test Email from Salesforce MCP Integration
 					Add a simple HTML greeting with my name (Luke) in bold to the message.
 					Add a simple random trivia about diablo game franchise (from diablo 1 or diablo 2) to the message.
